@@ -13,9 +13,6 @@ class Study extends Component {
                 <Header/>
                 <Content/>
                 <Footer/>
-                <Router>
-                    <Link to="/study"></Link>
-                </Router>
             </div>
         )
     }
