@@ -10,6 +10,7 @@ import Home from '../Home/index';
 import Course from '../Course/index';
 import Study from '../Study/index';
 import Profile from '../Profile/index';
+import Weike2 from '../Study/Weike-2/weike2'
 import './index.less';
 /******************************************************/
 class App extends Component {
@@ -21,6 +22,7 @@ class App extends Component {
                     <Route path='/home' component={Home}/>
                     <Route path='/course' component={Course}/>
                     <Route path='/study' component={Study}/>
+                    <Route path='/study/weike2' exact component={Weike2}/>
                     <Route path='/profile' component={Profile}/>
                 </div>
             </ConnectedRouter>

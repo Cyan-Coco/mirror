@@ -5,6 +5,18 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>W3CSchool</title>
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_464707_lk1ndvzjcfnljtt9.css">
+    <script>
+        ~function () {
+            window.addEventListener('resize', computed, false);
+            computed();
+            function computed() {
+                let deviceW = document.documentElement.clientWidth;
+                if (deviceW > 640) return;
+                document.documentElement.style.fontSize = deviceW / 640 * 100 + 'px';
+            }
+        }();
+    </script>
 </head>
 <body>
 <div id="app">
