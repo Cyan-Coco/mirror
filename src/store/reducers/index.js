@@ -13,4 +13,5 @@ export default combineReducers({
     /*
      * all reducer function
      */
+
 }, applyMiddleware(middleware));

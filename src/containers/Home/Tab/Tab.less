@@ -1,0 +1,25 @@
+.pic_list {
+  position: relative;
+  white-space: nowrap;
+  height: .6rem;
+  width: 7rem;
+  overflow-x:auto;
+  &::-webkit-scrollbar {
+     display: none;
+   }
+  ul {
+    position: absolute;
+    bottom: 0;
+    li {
+      width: 1.2rem;
+      height: .4rem;
+      margin: .03rem;
+      background: white;
+      display: inline-block;
+      font-size: .25rem;
+      color: #9d9d9d;
+      bottom: 0;
+    }
+  }
+}
+
