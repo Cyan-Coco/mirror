@@ -1,19 +1,21 @@
 let express = require('express'),
     Router = express.Router();
-let sliders = require('./mock/home/devhots');
+
+let devhots = require('./mock/home/devhots'),
+    office = require('./mock/home/office'),
+    webdev = require('./mock/home/frontend'),
+    mobiledev = require('./mock/home/mobdev');
+
 Router.get('/api/devhots', function (req, res) {
-    res.json(sliders);
+    res.json(devhots);
 });
 Router.get('/api/office', function (req, res) {
-    res.send('office');
+    res.json(office);
 });
 Router.get('/api/mobiledev', function (req, res) {
-    res.send('mobiledev');
+    res.json(mobiledev);
 });
 Router.post('api/webdev', function (req, res) {
-    res.send('webdev');
+    res.json(webdev);
 });
-
-
-
 module.exports = Router;
