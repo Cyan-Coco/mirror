@@ -5,7 +5,7 @@ import {get} from './index'
 const _Url = '/course';
 
 //获取列表中某一项的信息
-export function fetchCourse(id) {
+export function fetchBook(id) {
   return get(`${_Url}/api/course?id=${id}`)
 }
 //获取教程库中所有数据

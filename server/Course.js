@@ -1,6 +1,7 @@
 let express = require('express'),
     Router = express.Router();
 let courses = require('./mock/course/courses');
+console.log(courses.courseList[0].list);
 Router.post('/api/recentread', function (req, res) {
 
 });
