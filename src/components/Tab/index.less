@@ -1,0 +1,32 @@
+html{
+  font-size:100px;
+}
+.tabs{
+  height:1rem;
+  width:100%;
+  position: fixed;
+  bottom:0;
+  display: flex;
+  z-index: 50;
+  //flex-direction: row;//默认是行排列
+  background-color: #fff;
+  border-top:.01rem solid #d5d5;
+  a{
+    font-size:.24rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color:#b5b5b6;
+    i{
+      font-size:.4rem;
+    }
+    &.active{
+      color:#039be5;
+    }
+  }
+
+
+}
