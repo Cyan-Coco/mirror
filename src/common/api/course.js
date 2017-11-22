@@ -8,7 +8,4 @@ const _Url = '/course';
 export function fetchCourses() {
   return get(`${_Url}/api/courses`)
 }
-//获取最近阅读信息
-export function fetchReaded() {
-  return get(`${_Url}/api/recentread`)
-}
+
