@@ -13,6 +13,7 @@ export default function (state = initState, action) {
         ...state,
         list: action.payload.list
       }
+    //获取教程库中所有数据
     case types.FETCH_COURSES:
       return {
         ...state,
