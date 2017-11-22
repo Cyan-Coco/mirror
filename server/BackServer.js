@@ -12,7 +12,7 @@ let Home = require('./Home'),
 
 /*********************/
 app.use(function (req,res,next) {
-    res.header('Access-Control-Allow-Origin', 'http://localhost:8080');
+    res.header('Access-Control-Allow-Origin', '192.168.*.*');
     res.header('Access-Control-Allow-Methods', 'GET,POST,OPTIONS,PUSH,DELETE');
     res.header('Access-Control-Allow-Headers', 'Content-Type');
     res.header('Access-Control-Allow-Credentials', 'true');
@@ -31,6 +31,7 @@ app.use(expressSession({
     saveUninitialized: true,
     cookie: { secure: true }
 }))
+
 /**router middleware*/
 app.use('/course', Course);  //课程页路由
 app.use('/study', Study);    //学习页路由
