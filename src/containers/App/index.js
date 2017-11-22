@@ -10,6 +10,14 @@ import Home from '../Home/index';
 import Course from '../Course/index';
 import Study from '../Study/index';
 import Profile from '../Profile/index';
+
+import Weike2 from '../Study/Weike-2/weike2'
+import Tiku2 from '../Study/Tiku-2/Tiku2'
+import Shizhan2 from '../Study/Shizhan2/shizhan2';
+
+import Login from '../Login/index';
+import Register from '../Register/index';
+
 import './index.less';
 import Detail from "../Course/Detail/index";
 /******************************************************/
@@ -20,11 +28,19 @@ class App extends Component {
                 <div className="App">
                     <Route path='/' exact component={Home}/>
                     <Route path='/course' component={Course}/>
-                    <Route path='/study' component={Study}/>
+                    <Route exact path='/study' component={Study}/>
+                    <Route path='/study/weike2' exact component={Weike2}/>
+                    <Route path='/study/tiku2' exact component={Tiku2}/>
+                    <Route path='/study/shizhan2' exact component={Shizhan2}/>
                     <Route path='/profile' component={Profile}/>
+
                     <Route path='/detail/:id' component={Detail}/>
 
                     <Tab/>
+
+                    <Route path='/login' component={Login}/>
+                    <Route path='/register' component={Register}/>
+
                 </div>
             </ConnectedRouter>
         )

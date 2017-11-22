@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev-web": "webpack-dev-server --open",
-    "dev-build": "webpack"
+    "dev-build": "webpack",
+    "dev-server": "node ./server/BackServer.js"
   },
   "repository": {
     "type": "git",
@@ -41,6 +42,7 @@
     "express": "^4.16.2",
     "express-session": "^1.15.6",
     "history": "^4.7.2",
+    "moment": "^2.19.2",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
     "react-redux": "^5.0.6",
