@@ -3,6 +3,7 @@ import {push} from 'react-router-redux'
 import {fetchOffice, fetchDevhots} from '../common/api/home'
 import {fetchCourse,fetchCourses,fetchReaded} from '../common/api/course'
 import {fetchSignup, fetchSignin} from '../common/api/profile'
+import {fetchLessons} from '../common/api/study'
 export default {
   //获取首页中官方推荐数据
   getOffice(){
@@ -71,7 +72,19 @@ export default {
         })
       })
     }
-  }
+  },
   //获取教程库中最近阅读信息
 
+  
+  //获取学习页中所有数据
+  getLessons(){
+    return dispatch=>{
+      fetchLessons().then(payload=>{
+        dispatch({
+          type:types.FETCH_LESSONS,
+          payload
+        })
+      })
+    }
+  }
 }

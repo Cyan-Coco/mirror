@@ -7,6 +7,11 @@ import Content from "./Content/content";
 import Footer from './Footer/footer';
 import Header from "../../components/Header/home_header";
 class Study extends Component {
+  componentDidMount(){
+    this.props.getLessons()
+    console.log(this.props.sliders);
+    console.log(this.props.lessons);
+  }
     render() {
         return (
             <div className="study-wrap">
@@ -19,4 +24,4 @@ class Study extends Component {
 }
 //mapStateToProps
 import actions from '../../store/actions'
-export default connect(null, actions)(Study)
+export default connect(state=>state.study, actions)(Study)
