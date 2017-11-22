@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {createHashHistory} from 'history';
 import {HashRouter as Router, Route, Link} from 'react-router-dom';
 import {ConnectedRouter} from 'react-router-redux'
-import DefaultRoute from "../DefaultRoute/DefaultRoute";
+import Tab from '../../components/Tab/index'
 const history = createHashHistory();
 /******************************************************/
 import Home from '../Home/index';
@@ -19,22 +19,28 @@ import Login from '../Login/index';
 import Register from '../Register/index';
 
 import './index.less';
+import Detail from "../Course/Detail/index";
 /******************************************************/
 class App extends Component {
     render() {
         return (
             <ConnectedRouter history={history}>
                 <div className="App">
-                    <Route path='/' exact component={DefaultRoute}/>
-                    <Route path='/home' component={Home}/>
+                    <Route path='/' exact component={Home}/>
                     <Route path='/course' component={Course}/>
                     <Route exact path='/study' component={Study}/>
                     <Route path='/study/weike2' exact component={Weike2}/>
                     <Route path='/study/tiku2' exact component={Tiku2}/>
                     <Route path='/study/shizhan2' exact component={Shizhan2}/>
                     <Route path='/profile' component={Profile}/>
+
+                    <Route path='/detail/:id' component={Detail}/>
+
+                    <Tab/>
+
                     <Route path='/login' component={Login}/>
                     <Route path='/register' component={Register}/>
+
                 </div>
             </ConnectedRouter>
         )

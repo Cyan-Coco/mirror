@@ -21,11 +21,11 @@ class Profile extends Component {
                 <div className="qiandao">
                     <i className="iconfont icon-book"></i>
                     <div className="lv">
-                        <p>LV:</p>
-                        <p>EXP:</p>
-                        <p>
+                        <div>LV:</div>
+                        <div>EXP:</div>
+                        <div>
                             <div className="jindutiao"></div>
-                        </p>
+                        </div>
                     </div>
                     <div className="qiandao-btn">
                         签到

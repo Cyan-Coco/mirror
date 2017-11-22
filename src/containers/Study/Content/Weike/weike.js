@@ -1,5 +1,5 @@
 import React, {Component}  from 'react';
-import './weike.less';
+import './Micro-Lesson.less';
 import {createHashHistory} from 'history';
 import {HashRouter as Router, Route, Link} from 'react-router-dom';
 export default class Weike extends Component {
