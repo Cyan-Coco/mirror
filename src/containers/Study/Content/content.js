@@ -6,9 +6,9 @@ import Shizhan from './Shizhan/shizhan';
 import Lunbotu from "../../../components/Lunbotu/Lunbotu";
 
 let images=[
-    require('../.././../components/Lunbotu/1.jpg'),
-    require('../.././../components/Lunbotu/1.jpg'),
-    require('../.././../components/Lunbotu/1.jpg')
+    require('../.././../../resource/images/study/slider/1.png'),
+    require('../.././../../resource/images/study/slider/4.png'),
+    require('../.././../../resource/images/study/slider/3.png'),
 ];
 export default class Content extends Component {
     render() {
