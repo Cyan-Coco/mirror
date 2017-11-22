@@ -7,7 +7,9 @@ const express = require('express'),
 let Home = require('./Home'),
     Course = require('./Course'),
     Study = require('./Study'),
-    Profile = require('./Profile');
+    Profile = require('./Profile'),
+    DefaultPort=require('./PORT');
+
 /*********************/
 app.use(function (req,res,next) {
     res.header('Access-Control-Allow-Origin', 'http://localhost:8080');
@@ -36,9 +38,6 @@ app.use('/profile', Profile);   //个人中心路由
 app.use('/resource', express.static('../resource'));  //静态文件资源路由
 app.use('/', Home);    //首页路由
 /*********************/
-
-
-let port = 54999;
-app.listen(port, function () {
-    console.log(`this port ${port} is listening`);
+app.listen(DefaultPort, function () {
+    console.log(`服务启动成功，正在监听 ${DefaultPort} 端口`);
 });
