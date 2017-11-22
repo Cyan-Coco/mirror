@@ -1,12 +1,10 @@
 import React, {Component}  from 'react';
-import Header from "../Header/header";
 import Footer from '../Footer/footer';
 import './shizhan2.less'
 export default class Shizhan2 extends Component {
     render() {
         return (
             <div>
-                <Header title="编程实践课程" isShow={true}/>
                 <div className="shizhan2-content">
                     <ul className="shizhan2-list">
                         <li>

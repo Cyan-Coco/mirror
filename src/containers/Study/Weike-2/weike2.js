@@ -1,12 +1,10 @@
 import React, {Component}  from 'react';
-import Header from "../Header/header";
 import Footer from '../Footer/footer';
 import './weike2.less'
 export default class Weike2 extends Component {
     render() {
         return (
             <div>
-                <Header title="编程微课" isShow={true}/>
                 <div className="weike2-content">
                     <div className="slider">
                     </div>

@@ -1,12 +1,10 @@
 import React, {Component}  from 'react';
-import Header from "../Header/header";
 import Footer from '../Footer/footer';
 import './tiku2.less';
 export default class Tiku2 extends Component {
     render() {
         return (
             <div>
-                <Header title="题库" isShow={true}/>
                 <div className="tiku2-content">
                     <div className="slider"></div>
                     <ul className="tiku2-list">
