@@ -10,7 +10,7 @@ class Study extends Component {
     render() {
         return (
             <div className="study-wrap">
-                <Header/>
+                <Header title="学习"/>
                 <Content/>
                 <Footer/>
             </div>
