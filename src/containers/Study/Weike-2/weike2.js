@@ -1,10 +1,12 @@
 import React, {Component}  from 'react';
 import Footer from '../Footer/footer';
 import './weike2.less'
+import Header from "../../../components/Header/home_header";
 export default class Weike2 extends Component {
     render() {
         return (
             <div>
+                <Header headerName="编程微课" bgColor="#fff" fontColor="#000"/>
                 <div className="weike2-content">
                     <div className="slider">
                     </div>

@@ -1,10 +1,12 @@
 import React, {Component}  from 'react';
 import Footer from '../Footer/footer';
 import './shizhan2.less'
+import Header from "../../../components/Header/home_header";
 export default class Shizhan2 extends Component {
     render() {
         return (
             <div>
+                <Header headerName="实战" bgColor="#fff" fontColor="#000"/>
                 <div className="shizhan2-content">
                     <ul className="shizhan2-list">
                         <li>
