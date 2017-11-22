@@ -11,14 +11,6 @@ class Study extends Component {
             <div className="study-wrap">
                 <Content/>
                 <Footer/>
-<<<<<<< HEAD
-
-
-
-
-
-=======
->>>>>>> ran
             </div>
         )
     }
