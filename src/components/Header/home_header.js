@@ -12,7 +12,7 @@ export default class Header extends Component{
     }
     render(){
         return(
-            <div className="header" style={{background:this.props.bgColor}} >
+            <div className="home_header" style={{background:this.props.bgColor}} >
                 <span className="header_name" style={{color:this.props.fontColor}}>
                     {typeof(this.props.headerName) !=='string'?this.state.headerName:this.props.headerName}
                 </span>
