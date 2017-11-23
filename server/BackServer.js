@@ -31,6 +31,7 @@ app.use(expressSession({
     saveUninitialized: true,
     cookie: { secure: true }
 }))
+
 /**router middleware*/
 app.use('/course', Course);  //课程页路由
 app.use('/study', Study);    //学习页路由

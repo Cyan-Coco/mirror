@@ -1,7 +1,9 @@
 import * as types from './action-types'
 import {push} from 'react-router-redux'
 import {fetchOffice, fetchDevhots} from '../common/api/home'
-import {fetchCourse, fetchCourses, fetchReaded} from '../common/api/course'
+
+import {fetchCourses,fetchReaded} from '../common/api/course'
+
 import {fetchSignup, fetchSignin} from '../common/api/profile'
 import {fetchLessons} from '../common/api/study'
 export default {
@@ -24,6 +26,7 @@ export default {
                 })
             })
         }
+
     },
     //登录
     login(data){
@@ -60,8 +63,9 @@ export default {
     getCourse(){
         return (dispatch) => {
 
-        }
+      }
     },
+
     //获取教程库中所有数据
     getCourses(search){
         return dispatch => {
