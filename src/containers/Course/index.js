@@ -6,12 +6,14 @@ import {Link} from 'react-router-dom'
 import {downRefresh} from './Detail/utils'
 import Header from "../../components/Header/home_header";
 class Course extends Component {
+  
   componentDidMount() {
     downRefresh(this.refs.list,
       this.props.getCourses
     );
     this.props.getCourses();
   }
+  
   render() {
     return (
       <div className="bg">
