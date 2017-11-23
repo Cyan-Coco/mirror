@@ -3,20 +3,56 @@ import {connect} from 'react-redux';
 import {createHashHistory} from 'history';
 import {HashRouter as Router, Route, Link} from 'react-router-dom';
 import './index.less';
-import Content from "./Content/content";
+import Nav from './Nav/nav';
 import Footer from './Footer/footer';
 import Header from "../../components/Header/home_header";
+import Lunbotu from '../../components/Lunbotu/Lunbotu';
+
+let images = [
+    require('../.././components/Lunbotu/1.jpg'),
+    require('../.././components/Lunbotu/1.jpg'),
+    require('../.././components/Lunbotu/1.jpg')
+];
 class Study extends Component {
-  componentDidMount(){
-    this.props.getLessons()
-    console.log(this.props.sliders);
-    console.log(this.props.lessons);
-  }
+    componentDidMount() {
+        this.props.getLessons();
+        console.log(this.props.sliders);
+        console.log(this.props.lessons);
+    }
+
     render() {
         return (
             <div className="study-wrap">
                 <Header headerName="学习" bgColor="#fff" fontColor="#000"/>
-                <Content/>
+                <div className="study-content-wrap">
+                    <Lunbotu images={images}/>
+                    <Nav/>
+                    {
+                        this.props.lessons.map((item, index) => (
+                            <div className="study-weike-wrap">
+                                <div className="study-weike-title">
+                                    <h2>{item.title}</h2>
+                                    <Link to="/study/weike2">
+                                        <span>更多</span>
+                                    </Link>
+                                </div>
+                                <ul className="study-weike-list">
+                                    {
+                                        item.list.slice(0,4).map((item,index)=>(
+                                            <li>
+                                                <div className="study-weike-img">
+                                                    <img src={item.cover} alt=""/>
+                                                </div>
+                                                <h3>{item.title}</h3>
+                                            </li>
+                                        ))
+                                    }
+                                </ul>
+                            </div>
+                        ))
+                    }
+
+                </div>
                 <Footer/>
             </div>
         )
@@ -24,4 +60,4 @@ class Study extends Component {
 }
 //mapStateToProps
 import actions from '../../store/actions'
-export default connect(state=>state.study, actions)(Study)
+export default connect(state => state.study, actions)(Study)
