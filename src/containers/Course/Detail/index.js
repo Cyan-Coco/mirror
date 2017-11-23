@@ -11,18 +11,18 @@ export default class Detail extends Component {
             window.history.back();
             // window.location.href='https://www.baidu.com'
         } else {
-            this.refs.header.style.left = '0';
-            this.refs.content.style.left = '0';
-            this.refs.header.style.transitionDuration = '1s';
-            this.refs.content.style.transitionDuration = '1s';
+            this.refs.headerT.style.left = '0';
+            this.refs.contentT.style.left = '0';
+            this.refs.headerT.style.transitionDuration = '1s';
+            this.refs.contentT.style.transitionDuration = '1s';
             this.setState({flag: true});
         }
     };
     showMenu = () => {
-        this.refs.header.style.left = '5.3rem';
-        this.refs.content.style.left = '5.3rem';
-        this.refs.header.style.transitionDuration = '1s';
-        this.refs.content.style.transitionDuration = '1s';
+        this.refs.headerT.style.left = '5.3rem';
+        this.refs.contentT.style.left = '5.3rem';
+        this.refs.headerT.style.transitionDuration = '1s';
+        this.refs.contentT.style.transitionDuration = '1s';
         this.setState({flag: false});
     };
     componentDidMount(){
@@ -30,7 +30,7 @@ export default class Detail extends Component {
         if(book){
             this.setState({book});
         }else{
-            let id = this.props.match.params.id;
+            let id = this.props.match.params.coursetype;
             console.log(id);
             fetchBook(id).then(book=>this.setState({book}))
         }
@@ -38,28 +38,28 @@ export default class Detail extends Component {
     render() {
 
         return (
-            <div className="detail">
+            <div className="detailT">
                 <div className="up-content">
-                    <div className="header"
-                         ref="header">
+                    <div className="headerT"
+                         ref="headerT">
                         <span onClick={this.handleClick} className="iconfont icon-mjiantou-copy"></span>
                         <h4>{this.state.book.title}</h4>
                         <span className="iconfont icon-mulu" onClick={this.showMenu}></span>
                     </div>
-                    <div className="content" ref="content">
-                        <h5>{this.state.book.title}</h5>
-                        <div className="img">
+                    <div className="course-content" ref="contentT">
+                        <h5 className="titleT">{this.state.book.title}</h5>
+                        <div className="imgT">
                             <img
-                                src={this.state.book.img}
+                                src={this.state.book.cover}
                                 alt=""/>
                         </div>
-                        <p>{this.state.book.des}</p>
-                        <a href="">开始阅读</a>
-                        <a href="">收藏</a>
-                        <a href="">下载离线版本</a>
+                        <p className="course-p">{this.state.book.content}</p>
+                        <a href="" className="course-a">开始阅读</a>
+                        <a href="" className="course-a">收藏</a>
+                        <a href="" className="course-a">下载离线版本</a>
                     </div>
                 </div>
-                <div className="main">
+                <div className="mainT">
                     <div className="list">
                         <p>首页</p>
                         <ul>

@@ -1,19 +1,22 @@
-.detail{
+.detailT{
   .up-content{
-    .header{
+    .headerT{
       position: absolute;
       z-index: 60;
       top:0;
       left:0;
+      right:0;
       width:100%;
-      height:1.2rem;
+      overflow-x: hidden;
+      height:.9rem;
       padding:.15rem;
+      box-sizing: border-box;
       font-size: .35rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       color: #fff;
-      background-color: #d71f21;
+      background-color: #ae4141;
       h4{
         font-weight: normal;
       }
@@ -21,24 +24,26 @@
         font-size:.4rem;
       }
     }
-    .content{
+    .course-content{
       position: absolute;
-      top:1.2rem;
+      top:.9rem;
       bottom:0;
       left:0;
       right:0;
       width:100%;
       overflow-x: hidden;
+      overflow-y: scroll;
       z-index: 60;
       background-color: #fff;
+      box-sizing: border-box;
       padding:.5rem .35rem 0 .35rem;
       display: flex;
       flex-direction: column;
       align-items: center;
-      h5{
+      .titleT{
         font-size: .3rem;
       }
-      .img{
+      .imgT{
         margin: .2rem 0 .2rem 0;
         width:4rem;
         height:3rem;
@@ -47,11 +52,11 @@
           height:100%;
         }
       }
-      p{
+      .course-p{
         font-size: .25rem;
         line-height: .4rem;
       }
-      a{
+      .course-a{
         display: block;
         width:100%;
         height:.6rem;
@@ -67,12 +72,14 @@
 
     }
   }
-  .main{
+  .mainT{
     position: fixed;
     top:0;
     bottom:0;
     left: 0;
     right:0;
+    width:100%;
+    overflow-x: hidden;
     z-index:55 ;
     background-color: lightgray;
     font-size: .3rem;

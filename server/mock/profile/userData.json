@@ -1,20 +1,12 @@
-
 [
   {
     "userId": 1,
     "userVip":false,
-    "userRead":["","",""],
-    "userName": "xxxxxxxxxxxxxx",
-    "userPwd":"1234567",
-    "userExp":0
-  },
-  {
-    "userId": 1,
-    "userVip":false,
-    "userRead":["","",""],
-    "userLike":["","",""],
-    "userName": "xxxxxxxxxxxxxx",
-    "userPwd":"1234567",
+    "userRead":[],
+    "userFavorites":[],
+    "userImg":"",
+    "userName": "",
+    "userPwd":"",
     "userExp":0
   }
 ]
