@@ -20,6 +20,8 @@ import Register from '../Register/index';
 
 import './index.less';
 import Detail from "../Course/Detail/index";
+import Search from "../Course/Search/index";
+
 /******************************************************/
 class App extends Component {
     render() {
@@ -35,6 +37,7 @@ class App extends Component {
                     <Route path='/profile' component={Profile}/>
 
                     <Route path='/detail/:coursetype' component={Detail}/>
+                    <Route path='/search' component={Search}/>
 
                     <Tab/>
 

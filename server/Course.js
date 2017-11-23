@@ -9,6 +9,17 @@ Router.get('/api/course', function (req, res) {
 
 });
 Router.get('/api/courses', function (req, res) {
-    res.json(courses);
+    let {search}=req.query;
+    let newAry=[];
+    if(search){
+        courses.courseList.map((item,index)=>{
+            item.list.map((item,index)=>{
+                item.content.indexOf(search)>-1?newAry.push(item):null;
+            })
+        });
+        res.json(courses);
+    }else{
+        res.json(courses);
+    }
 });
 module.exports = Router;
