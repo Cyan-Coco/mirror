@@ -46,21 +46,10 @@ export default class Weike2 extends Component {
                                 </li>
                             ))
                         }
-                        <li>
-                            <div className="weike2-img">
-                                <p>HTML微课</p>
-                            </div>
-                            <div className="weike2-title">
-                                <h4>微课使用引导</h4>
-                                <span className="price">价格:免费</span>
-                                <span className="canyu">参与</span>
-                            </div>
-                            <span className="arrow-right"></span>
-                        </li>
                     </ul>
                 </div>
                 <Footer/>
             </div>
         )
     }
-
+}
