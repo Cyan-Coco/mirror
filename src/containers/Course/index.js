@@ -1,10 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import './index.less';
-<<<<<<< HEAD
-
-=======
->>>>>>> ran
 import {Link} from 'react-router-dom'
 import {downRefresh} from './Detail/utils'
 class Course extends Component {
@@ -55,13 +51,8 @@ class Course extends Component {
 
         )
     }
-<<<<<<< HEAD
 }
-//mapStateToProps
-import actions from '../../store/actions'
-export default connect(state=>state.course, actions)(Course)
-=======
-}
+
 //mapStateToProps
 import actions from '../../store/actions'
 export default connect(state=>state.course, actions)(Course)
@@ -94,5 +85,3 @@ class Course  extends Component {
        )
    }
 }
-
->>>>>>> ran
