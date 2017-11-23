@@ -5,7 +5,10 @@ import Main from './Home_main/Main';
 import {connect} from 'react-redux';
 import './index.less';
 
-export default class Home extends Component {
+class Home extends Component {
+  componentDidMount(){
+    this.props.getOffice()
+  }
     render() {
         return (
 
@@ -24,3 +27,5 @@ export default class Home extends Component {
 /*
  import actions from '../../store/actions'
  export default connect(null,actions)(Home)*/
+import actions from '../../store/actions'
+export default connect(state=>state.home,actions)(Home)

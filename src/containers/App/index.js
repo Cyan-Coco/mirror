@@ -34,7 +34,7 @@ class App extends Component {
                     <Route path='/study/shizhan2' exact component={Shizhan2}/>
                     <Route path='/profile' component={Profile}/>
 
-                    <Route path='/detail/:id' component={Detail}/>
+                    <Route path='/detail/:coursetype' component={Detail}/>
 
                     <Tab/>
 

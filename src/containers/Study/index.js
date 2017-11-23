@@ -29,7 +29,7 @@ class Study extends Component {
                     <Nav/>
                     {
                         this.props.lessons.map((item, index) => (
-                            <div className="study-weike-wrap">
+                            <div key={index} className="study-weike-wrap">
                                 <div className="study-weike-title">
                                     <h2>{item.title}</h2>
                                     <Link to="/study/weike2">
@@ -39,7 +39,7 @@ class Study extends Component {
                                 <ul className="study-weike-list">
                                     {
                                         item.list.slice(0,4).map((item,index)=>(
-                                            <li>
+                                            <li key={index}>
                                                 <div className="study-weike-img">
                                                     <img src={item.cover} alt=""/>
                                                 </div>
