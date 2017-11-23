@@ -30,7 +30,6 @@ export default class Weike2 extends Component {
                         <img src={this.state.sliders.sliderImg}/>
                     </div>
                     <ul className="weike2-list">
-<<<<<<< HEAD
                         {
                             this.state.lessons.map((item, index) => (
                                 <li key={index}>
@@ -47,8 +46,6 @@ export default class Weike2 extends Component {
                                 </li>
                             ))
                         }
-
-=======
                         <li>
                             <div className="weike2-img">
                                 <p>HTML微课</p>
@@ -60,11 +57,10 @@ export default class Weike2 extends Component {
                             </div>
                             <span className="arrow-right"></span>
                         </li>
->>>>>>> ran
                     </ul>
                 </div>
                 <Footer/>
             </div>
         )
     }
-}
+
