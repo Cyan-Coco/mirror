@@ -8,9 +8,6 @@ import actions from '../../store/actions'
 
 
 class Course extends Component {
-    constructor() {
-        super();
-    }
 
     componentDidMount() {
         downRefresh(this.refs.list,
@@ -40,34 +37,31 @@ class Course extends Component {
                     </div>
                     <div className="list">
                         {this.props.courses.length > 0 && this.props.courses.map((item, index) => (
-                            <div className="list-content" key={index}>
-                                <h5>{item.title}</h5>
-                                <ul>
-                                    {item.list.map((item, index) => (
-                                        <li key={index}>
-                                            <Link to={{pathname: `/detail/${item.coursetype}`, state: {...item}}}
-                                                  className="li">
-                                                <div className="img">
-                                                    <img
-                                                        src={item.cover}
-                                                        alt=""/>
-                                                </div>
-                                                <div className="content">
-                                                    <p>{item.title}</p>
-                                                    <p>{item.content}</p>
-                                                </div>
-                                                <span className="iconfont icon-arrow-right"/>
-                                            </Link>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
+                        <div className="list-content" key={index}>
+                            <h5>{item.title}</h5>
+                            <ul>
+                                {item.list.map((item, index) => (
+                                    <li key={index}>
+                                        <Link to={{pathname: `/detail/${item.coursetype}`, state: {...item}}}
+                                              className="li">
+                                            <div className="img">
+                                                <img
+                                                    src={item.cover}
+                                                    alt=""/>
+                                            </div>
+                                            <div className="content">
+                                                <p>{item.title}</p>
+                                                <p>{item.content}</p>
+                                            </div>
+                                            <span className="iconfont icon-arrow-right"></span>
+                                        </Link>
+                                    </li>))}
+                            </ul>
+                        </div>))}
 
-                        ))}
                     </div>
                 </div>
-            </div>
-        )
-    }
+            </div
+            >)}
 }
 export default connect(state => state.course, actions)(Course)

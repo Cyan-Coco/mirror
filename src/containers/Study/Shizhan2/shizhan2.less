@@ -4,14 +4,19 @@
   width: 100%;
   height: 100%;
   overflow-y: scroll;
-  .Slider {
+  .slider {
     width: 100%;
     height: 2.8rem;
-    border: 1px solid lightgreen;
+    background-size: 100% 100%;
+    img {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+    }
   }
   .shizhan2-list {
     width: 100%;
-    border-top:2px solid #ccc;
+    border-top: 2px solid #ccc;
     li {
       padding: .1rem .2rem 0 .2rem;
       box-sizing: border-box;
@@ -20,24 +25,24 @@
       border-bottom: 1px solid #b5b5b5;
       .shizhan2-img {
         display: inline-block;
-        background: url("./1.jpg") no-repeat;
-        background-size: 100% 100%;
+        //background: url("./1.jpg") no-repeat;
+        //background-size: 100% 100%;
         width: 2.6rem;
         height: 1.4rem;
         border: 1px solid lightsalmon;
         border-radius: .18rem;
         vertical-align: middle;
-        p {
-          margin-top: .3rem;
-          padding-left: .5rem;
-          font-size: .5rem;
-          color: #fff;
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: .18rem;
         }
       }
       .shizhan2-title {
         margin-left: .4rem;
         display: inline-block;
         font-size: .28rem;
+        vertical-align: middle;
         h4 {
           font-size: .28rem;
           font-weight: 400;
@@ -52,12 +57,12 @@
           font-size: .2rem;
         }
       }
-      .arrow-right{
+      .arrow-right {
         display: inline-block;
-        margin-left: .65rem;
+        margin-top: .6rem;
+        float: right;
         width: .3rem;
         height: .3rem;
-        line-height: 1.8rem;
         background: url("./arrow-right.png") no-repeat;
         background-size: 100% 100%;
         vertical-align: middle;

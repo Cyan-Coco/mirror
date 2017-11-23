@@ -5,7 +5,7 @@ import * as types from '../action-types'
 let initState = {
   sliders:[],
   lessons:[]
-}
+};
 export default function (state = initState, action) {
   switch (action.type) {
     case types.FETCH_LESSONS:
@@ -13,7 +13,7 @@ export default function (state = initState, action) {
         ...state,
         sliders:action.payload.slider.list,
         lessons:action.payload.studyList
-      }
+      };
     default:
       return state
   }

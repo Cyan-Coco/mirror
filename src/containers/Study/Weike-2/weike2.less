@@ -7,8 +7,12 @@
   .slider {
     width: 100%;
     height: 2.8rem;
-    background: url("./1.jpg") no-repeat;
     background-size: 100% 100%;
+    img {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+    }
   }
   .weike2-list {
     width: 100%;
@@ -18,29 +22,40 @@
       width: 100%;
       height: 1.8rem;
       border-bottom: 1px solid #b5b5b5;
+      vertical-align: middle;
       .weike2-img {
         display: inline-block;
-        background: url("./1.jpg") no-repeat;
+        //background: url("./1.jpg") no-repeat;
         background-size: 100% 100%;
         width: 2.6rem;
         height: 1.4rem;
         border: 1px solid lightsalmon;
         border-radius: .18rem;
         vertical-align: middle;
-        p {
-          margin-top: .3rem;
-          padding-left: .08rem;
-          width: 100%;
-          height: .4rem;
-          background-color: rgba(0, 0, 0, .3);
-          font-size: .28rem;
-          color: #fff;
+        img {
+          display: inline-block;
+          width: 2.6rem;
+          height: 1.4rem;
+          background-size: 100% 100%;
+          border-radius: .18rem;
+          vertical-align: middle;
         }
+        //p {
+        //  margin-top: .3rem;
+        //  padding-left: .08rem;
+        //  width: 100%;
+        //  height: .4rem;
+        //  background-color: rgba(0, 0, 0, .3);
+        //  font-size: .28rem;
+        //  color: #fff;
+        //}
       }
       .weike2-title {
         margin-left: .4rem;
         display: inline-block;
         font-size: .28rem;
+        vertical-align: middle;
+
         h4 {
           font-size: .28rem;
           font-weight: 400;
@@ -55,12 +70,13 @@
           font-size: .2rem;
         }
       }
-      .arrow-right{
+      .arrow-right {
         display: inline-block;
-        margin-left: .65rem;
+        margin-top: .6rem;
+        float: right;
         width: .3rem;
         height: .3rem;
-        line-height: 1.8rem;
+        //line-height: 1.8rem;
         background: url("./arrow-right.png") no-repeat;
         background-size: 100% 100%;
         vertical-align: middle;

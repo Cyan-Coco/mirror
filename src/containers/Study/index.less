@@ -10,10 +10,79 @@ ul li {
 a {
   text-decoration: none
 }
-html,body{
+
+html, body {
   width: 100%;
   height: 100%;
 }
-.study-wrap{
+
+.study-wrap {
   position: relative;
+
+  .study-content-wrap {
+    position: fixed;
+    top: .8rem;
+    left: 0;
+    right: 0;
+    bottom: 1rem;
+    width: 100%;
+    overflow-y: scroll;
+    border-top: 2px solid #ccc;
+    .study-weike-wrap {
+      width: 100%;
+      .study-weike-title {
+        padding: 0 10px;
+        width: 100%;
+        height: 1rem;
+        line-height: 1rem;
+        border-bottom: 1px solid #ccc;
+        box-sizing: border-box;
+        h2 {
+          float: left;
+          display: inline-block;
+          font-size: .32rem;
+          font-weight: 400;
+          color: #212121;
+        }
+        span {
+          float: right;
+          font-size: .22rem;
+          font-weight: 200;
+          color: #666666;
+        }
+      }
+      .study-weike-list {
+        margin-top: .1rem;
+        box-sizing: border-box;
+        padding: 0 .1rem;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        li {
+          position: relative;
+          width: 48%;
+          height: 2.5rem;
+          margin-left: .05rem;
+          img {
+            width: 100%;
+            height: 1.8rem;
+            box-sizing: border-box;
+            background: url("beijing.jpg");
+            border-radius: .1rem;
+          }
+
+        }
+        h3 {
+          margin-top: .05rem;
+          font-size: .25rem;
+          font-weight: 400;
+          color: #212121;
+          text-align: center;
+        }
+      }
+
+    }
+  }
+
 }
