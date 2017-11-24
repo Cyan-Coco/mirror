@@ -5,5 +5,9 @@ Router.get('/api/studydata', function (req, res) {
     //获取所有的学习数据，学习页面的首页显示了数据的一部分（前端页面把数据截取一部分即可），点击更多即显示所有的数据即可
     res.json(study);
 });
+Router.get('/api/studylist',function (req,res) {
+    let {id} = req.query;
+    res.json(study.studyList[id]);
+})
 
 module.exports = Router;

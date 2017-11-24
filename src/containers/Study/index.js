@@ -4,21 +4,13 @@ import {createHashHistory} from 'history';
 import {HashRouter as Router, Route, Link} from 'react-router-dom';
 import './index.less';
 import Nav from './Nav/nav';
-import Footer from './Footer/footer';
 import Header from "../../components/Header/home_header";
 import Lunbotu from '../../components/Lunbotu/Lunbotu';
 
 
-let images = [
-    require('../.././components/Lunbotu/1.jpg'),
-    require('../.././components/Lunbotu/1.jpg'),
-    require('../.././components/Lunbotu/1.jpg')
-];
 class Study extends Component {
     componentDidMount() {
         this.props.getLessons();
-        console.log(this.props.sliders);
-        console.log(this.props.lessons);
     }
 
     render() {
@@ -56,7 +48,6 @@ class Study extends Component {
                     }
 
                 </div>
-                <Footer/>
             </div>
         )
     }

@@ -58,6 +58,8 @@ export default {
         }
     },
 
+<<<<<<< HEAD
+=======
 /*    //获取教程库列表中某一项的信息
     getCourse(){
         return (dispatch) => {
@@ -65,6 +67,7 @@ export default {
       }
     },
 
+>>>>>>> 50c80f8d5ddd5a1d343967244637167777df8010
     //获取教程库中所有数据
     getCourses(search){
         return dispatch => {
