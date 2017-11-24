@@ -1,7 +1,10 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import './index.less';
+<<<<<<< HEAD
+=======
 
+>>>>>>> master
 import {Link} from 'react-router-dom'
 import {downRefresh} from './Detail/utils'
 import Header from "../../components/Header/home_header";
@@ -25,6 +28,11 @@ class Course extends Component {
               <input type="text" placeholder="在1000+教库中搜索..."/>
             </div>
 
+<<<<<<< HEAD
+
+        )
+    }
+=======
           </div>
           <div className="list">
             {this.props.courses.length > 0 && this.props.courses.map((item, index) => (
@@ -55,7 +63,13 @@ class Course extends Component {
       </div>
     )
   }
+>>>>>>> master
 }
+
 //mapStateToProps
 import actions from '../../store/actions'
+<<<<<<< HEAD
+export default connect(state=>state.course, actions)(Course)
+=======
 export default connect(state => state.course, actions)(Course)
+>>>>>>> master
