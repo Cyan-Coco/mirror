@@ -8,6 +8,11 @@ import Footer from './Footer/footer';
 import Header from "../../components/Header/home_header";
 import Lunbotu from '../../components/Lunbotu/Lunbotu';
 
+let images = [
+    require('../.././components/Lunbotu/1.jpg'),
+    require('../.././components/Lunbotu/1.jpg'),
+    require('../.././components/Lunbotu/1.jpg')
+];
 class Study extends Component {
     componentDidMount() {
         this.props.getLessons();
