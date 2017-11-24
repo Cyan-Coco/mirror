@@ -5,7 +5,7 @@ import {fetchCourses} from '../../../common/api/course'
 export default class Search extends Component {
     constructor() {
         super();
-        this.state = {search: '', list: []}
+        this.state = {search: '', list: [],homeToStr:''}
     }
 
     handleClick = () => {
@@ -16,6 +16,8 @@ export default class Search extends Component {
     };
 
     componentDidMount() {
+        //homeToStr = localStorage.getItem('homeStr');
+        this.setState({homeToStr:localStorage.getItem('homeStr')});
         fetchCourses(localStorage.getItem('c')).then(list => {
             this.setState({list,search:localStorage.getItem('c')})
         });
@@ -40,8 +42,12 @@ export default class Search extends Component {
                             <span
                                 onClick={() => this.searchContent(this.state.search)}
                                 className="searchBtn iconfont icon-sousuo"></span>
-                        <input value={this.state.search} onChange={this.change} type="text"
-                               placeholder="在1000+教库中搜索..."/>
+
+                               {
+                                   this.state.homeToStr!==''?<input value={this.state.homeToStr} onChange={this.change} placeholder="在1000+教库中搜索..." type="text"/>:<input value={this.state.search} onChange={this.change} placeholder="在1000+教库中搜索..." type="text"/>
+
+                               }
+
                     </div>
                 </div>
                 {/*搜索结果*/}
