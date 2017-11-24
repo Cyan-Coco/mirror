@@ -1,5 +1,4 @@
 import React, {Component}  from 'react';
-import Footer from '../Footer/footer';
 import './tiku2.less';
 import Header from "../../../components/Header/home_header";
 import {fetchLessons} from '../../../common/api/study';
@@ -45,7 +44,6 @@ export default class Tiku2 extends Component {
                         }
                     </ul>
                 </div>
-                <Footer/>
             </div>
         )
     }

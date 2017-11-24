@@ -1,13 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import './index.less';
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> master
-=======
->>>>>>> 6c2a7b7aa26ef2e00ba01374c3b9f4230455a510
 import {Link} from 'react-router-dom'
 import {downRefresh} from './Detail/utils'
 import Header from "../../components/Header/home_header";
@@ -15,54 +8,6 @@ import actions from '../../store/actions'
 
 
 class Course extends Component {
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-        )
-    }
-=======
-          </div>
-          <div className="list">
-            {this.props.courses.length > 0 && this.props.courses.map((item, index) => (
-              <div className="list-content" key={index}>
-                <h5>{item.title}</h5>
-                <ul>
-                  {item.list.map((item, index) => (
-                    <li key={index}>
-                      <Link to={{pathname: `/detail/${item.coursetype}`, state: {...item}}} className="li">
-                        <div className="img">
-                          <img
-                            src={item.cover}
-                            alt=""/>
-                        </div>
-                        <div className="content">
-                          <p>{item.title}</p>
-                          <p>{item.content}</p>
-                        </div>
-                        <span className="iconfont icon-arrow-right"/>
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    )
-  }
->>>>>>> master
-}
-
-//mapStateToProps
-import actions from '../../store/actions'
-<<<<<<< HEAD
-export default connect(state=>state.course, actions)(Course)
-=======
-export default connect(state => state.course, actions)(Course)
->>>>>>> master
-=======
     componentDidMount() {
         downRefresh(this.refs.list,
             this.props.getCourses
@@ -119,4 +64,3 @@ export default connect(state => state.course, actions)(Course)
             >)}
 }
 export default connect(state => state.course, actions)(Course)
->>>>>>> 6c2a7b7aa26ef2e00ba01374c3b9f4230455a510

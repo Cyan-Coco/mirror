@@ -1,7 +1,5 @@
 import React, {Component}  from 'react';
 import {connect} from 'react-redux';
-
-import Footer from '../Footer/footer';
 import './weike2.less'
 import Header from "../../../components/Header/home_header";
 import {fetchLessons} from '../../../common/api/study'
@@ -50,7 +48,6 @@ class Weike2 extends Component {
                         }
                     </ul>
                 </div>
-                <Footer/>
             </div>
         )
     }

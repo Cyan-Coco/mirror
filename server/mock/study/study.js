@@ -2,7 +2,7 @@ module.exports = {
   slider: {
     list: [
       {url: '', sliderImg: '../../../resource/images/study/slider/1.png'},
-      {url: '', sliderImg: '../../../resource/images/study/slider/2.png'},
+      {url: '', sliderImg: '../../../resource/images/study/slider/4.png'},
       {url: '', sliderImg: '../../../resource/images/study/slider/3.png'},
     ]
   },
