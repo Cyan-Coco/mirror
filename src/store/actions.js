@@ -59,13 +59,6 @@ export default {
         }
     },
 
-    //获取教程库列表中某一项的信息
-    getCourse(){
-        return (dispatch) => {
-
-      }
-    },
-
     //获取教程库中所有数据
     getCourses(search){
         return dispatch => {
