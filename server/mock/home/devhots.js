@@ -10,6 +10,7 @@ module.exports = {
     },
     articles: {
         hasMore: true,
+        title:'开发者头条',
         list: [
             {
                 id: 1,

@@ -1,6 +1,7 @@
 module.exports={
     articles: {
         hasMore: true,
+        title:'官方推荐',
         list: [
             {
                 id: 1,

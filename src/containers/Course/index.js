@@ -8,7 +8,6 @@ import actions from '../../store/actions'
 
 
 class Course extends Component {
-
     componentDidMount() {
         downRefresh(this.refs.list,
             this.props.getCourses

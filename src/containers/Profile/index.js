@@ -2,12 +2,15 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import './index.less';
+import Header from "../../components/Header/home_header";
+
 class Profile extends Component {
     render() {
         return (
             <div className="mains">
                 <div className="header">
-                    <div className="myheader">我的</div>
+                    {/*<div className="myheader">我的</div>*/}
+                    <Header  headerName="我的"/>
                     <div className="imglogin">
                         <img src={require('../../img/logo.png')} alt=""/>
                         <i className="iconfont icon-book"></i>
