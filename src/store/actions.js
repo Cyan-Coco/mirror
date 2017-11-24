@@ -3,6 +3,7 @@ import {push} from 'react-router-redux'
 import {fetchOffice, fetchDevhots,fetchFrontWeb,fetchMoveDev} from '../common/api/home'
 import {fetchCourse, fetchCourses, fetchReaded} from '../common/api/course'
 import {fetchSignup, fetchSignin} from '../common/api/profile'
+import {fetchLessons} from '../common/api/study'
 export default {
     //获取首页中官方推荐数据
     getOffice(){

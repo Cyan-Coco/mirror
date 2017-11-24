@@ -8,11 +8,6 @@ import Footer from './Footer/footer';
 import Header from "../../components/Header/home_header";
 import Lunbotu from '../../components/Lunbotu/Lunbotu';
 
-let images = [
-    require('../.././components/Lunbotu/1.jpg'),
-    require('../.././components/Lunbotu/1.jpg'),
-    require('../.././components/Lunbotu/1.jpg')
-];
 class Study extends Component {
     componentDidMount() {
         this.props.getLessons();
@@ -25,7 +20,9 @@ class Study extends Component {
             <div className="study-wrap">
                 <Header headerName="学习" bgColor="#fff" fontColor="#000"/>
                 <div className="study-content-wrap">
-                    <Lunbotu images={images}/>
+                    {
+                        this.props.sliders.length>0?<Lunbotu sliders={this.props.sliders}/>:''
+                    }
                     <Nav/>
                     {
                         this.props.lessons.map((item, index) => (
