@@ -14,10 +14,13 @@ export default class Header extends Component{
             signUp:false
         }
     }
+    handleGoBack(){
+        window.history.back();
+    }
     render(){
         return(
             <div className="home_header" style={{background:this.props.bgColor}} >
-                <span className="goBack">
+                <span className="goBack" onClick={this.handleGoBack}>
                     {this.props.goBack?<span>&lt;&lt;</span>:''}
                 </span>
                 <span className="header_name" style={{color:this.props.fontColor}}>
