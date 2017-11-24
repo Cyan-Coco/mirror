@@ -10,7 +10,7 @@ export default class Content extends Component {
                     <span className="title_content">{this.props.articles.title}{this.props.title}</span>
                 </div>
 
-                <div className="content">
+                    <div className="content">
                     {
                         this.props.articles.list.map((item, index) => (
                         <div className="content_item" key={index}>
