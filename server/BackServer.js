@@ -1,18 +1,19 @@
 const express = require('express'),
     app = express(),
     BodyParser = require('body-parser'),
-   expressSession=require('express-session');
+    expressSession = require('express-session');
 
 /**导入路由中间件*******/
 let Home = require('./Home'),
     Course = require('./Course'),
     Study = require('./Study'),
     Profile = require('./Profile'),
-    DefaultPort=require('./PORT');
+    DefaultPort = require('./PORT');
 
 /*********************/
-app.use(function (req,res,next) {
-    res.header('Access-Control-Allow-Origin', '192.168.*.*');
+
+app.use(function (req, res, next) {
+    res.header('Access-Control-Allow-Origin', 'http://localhost:8080');
     res.header('Access-Control-Allow-Methods', 'GET,POST,OPTIONS,PUSH,DELETE');
     res.header('Access-Control-Allow-Headers', 'Content-Type');
     res.header('Access-Control-Allow-Credentials', 'true');
@@ -29,7 +30,7 @@ app.use(expressSession({
     secret: 'sevenw3c',
     resave: true,
     saveUninitialized: true,
-    cookie: { secure: true }
+    cookie: {secure: true}
 }))
 
 /**router middleware*/

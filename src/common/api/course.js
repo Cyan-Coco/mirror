@@ -10,7 +10,8 @@ export function fetchBook(id) {
 }
 
 //获取教程库中所有数据
-export function fetchCourses() {
-  return get(`${_Url}/api/courses`)
+export function fetchCourses(search) {
+  return get(`${_Url}/api/courses?search=${search||""}`)
 }
+
 

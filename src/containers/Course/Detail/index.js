@@ -25,6 +25,11 @@ export default class Detail extends Component {
         this.refs.contentT.style.transitionDuration = '1s';
         this.setState({flag: false});
     };
+    collectBook=()=>{
+        //如果没有登录就弹出请先登录，如果登录了就可以收藏了，
+        this.refs.collect.innerHTML='已收藏';
+        this.refs.collect.style.background='orange';
+    };
     componentDidMount(){
         let book = this.props.location.state;// 这么写是因为列表页面link中写了state所以可以这么调用
         if(book){
@@ -54,8 +59,10 @@ export default class Detail extends Component {
                                 alt=""/>
                         </div>
                         <p className="course-p">{this.state.book.content}</p>
-                        <a href="" className="course-a">开始阅读</a>
-                        <a href="" className="course-a">收藏</a>
+                        <a href="" className="course-a read">开始阅读</a>
+                        <a href="javascript:;" className="course-a"
+                           ref="collect"
+                           onClick={()=>this.collectBook(this.state.book)}>收藏</a>
                         <a href="" className="course-a">下载离线版本</a>
                     </div>
                 </div>
