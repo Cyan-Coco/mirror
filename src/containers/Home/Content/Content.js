@@ -1,125 +1,32 @@
-import React,{Component} from 'react';
+import React, {Component} from 'react';
+import Moment from 'moment';
 import './Content.less';
 
-export default class Content extends Component{
-    render(){
-        return(
+export default class Content extends Component {
+    render() {
+        return (
             <div>
                 <div className="title">
-                    <span className="title_content">开发者头条</span>
+                    <span className="title_content">{this.props.articles.title}{this.props.title}</span>
                 </div>
-                <div className="content">
-                    <div className="content_item">
-                        <span className="article_header">
-                            学习简单易学的使用广泛的php语言
-                    </span>
-                        <span className="article_content">
-                            php微课来袭，简单易学，是在后端常用的开发语言，有利于了解后端开发...
-                    </span>
-                        <span className="article_others">
-                            FreeBut/糖果 18分钟前
-                    </span>
 
-                    </div>
-                    <div  className="content_item">
-                        <span className="article_header">
-                            学习简单易学的使用广泛的php语言
-                    </span>
-                        <span className="article_content">
-                            php微课来袭，简单易学，是在后端常用的开发语言，有利于了解后端开发...
-                    </span>
-                        <span className="article_others">
-                            FreeBut/糖果 18分钟前
-                    </span>
-                    </div>
-                    <div  className="content_item">
-                        <span className="article_header">
-                            学习简单易学的使用广泛的php语言
-                    </span>
-                        <span className="article_content">
-                            php微课来袭，简单易学，是在后端常用的开发语言，有利于了解后端开发...
-                    </span>
-                        <span className="article_others">
-                            FreeBut/糖果 18分钟前
-                    </span>
-                    </div>
-                    <div  className="content_item">
-                        <span className="article_header">
-                            学习简单易学的使用广泛的php语言
-                    </span>
-                        <span className="article_content">
-                            php微课来袭，简单易学，是在后端常用的开发语言，有利于了解后端开发...
-                    </span>
-                        <span className="article_others">
-                            FreeBut/糖果 18分钟前
-                    </span>
-                    </div>
-                    <div  className="content_item">
-                        <span className="article_header">
-                            学习简单易学的使用广泛的php语言
-                    </span>
-                        <span className="article_content">
-                            php微课来袭，简单易学，是在后端常用的开发语言，有利于了解后端开发...
-                    </span>
-                        <span className="article_others">
-                            FreeBut/糖果 18分钟前
-                    </span>
-                    </div>
-                    <div  className="content_item">
-                        <span className="article_header">
-                            学习简单易学的使用广泛的php语言
-                    </span>
-                        <span className="article_content">
-                            php微课来袭，简单易学，是在后端常用的开发语言，有利于了解后端开发...
-                    </span>
-                        <span className="article_others">
-                            FreeBut/糖果 18分钟前
-                    </span>
-                    </div>
-                    <div  className="content_item">
-                        <span className="article_header">
-                            学习简单易学的使用广泛的php语言
-                    </span>
-                        <span className="article_content">
-                            php微课来袭，简单易学，是在后端常用的开发语言，有利于了解后端开发...
-                    </span>
-                        <span className="article_others">
-                            FreeBut/糖果 18分钟前
-                    </span>
-                    </div>
-                    <div  className="content_item">
-                        <span className="article_header">
-                            学习简单易学的使用广泛的php语言
-                    </span>
-                        <span className="article_content">
-                            php微课来袭，简单易学，是在后端常用的开发语言，有利于了解后端开发...
-                    </span>
-                        <span className="article_others">
-                            FreeBut/糖果 18分钟前
-                    </span>
-                    </div>
-                    <div  className="content_item">
-                        <span className="article_header">
-                            学习简单易学的使用广泛的php语言
-                    </span>
-                        <span className="article_content">
-                            php微课来袭，简单易学，是在后端常用的开发语言，有利于了解后端开发...
-                    </span>
-                        <span className="article_others">
-                            FreeBut/糖果 18分钟前
-                    </span>
-                    </div>
-                    <div  className="content_item">
-                        <span className="article_header">
-                            学习简单易学的使用广泛的php语言
-                    </span>
-                        <span className="article_content">
-                            php微课来袭，简单易学，是在后端常用的开发语言，有利于了解后端开发...
-                    </span>
-                        <span className="article_others">
-                            FreeBut/糖果 18分钟前
-                    </span>
-                    </div>
+                <div className="content">
+                    {
+                        this.props.articles.list.map((item, index) => (
+                        <div className="content_item" key={index}>
+                            <span className="article_header">
+                                {item.title}
+                            </span>
+                            <span className="article_content">
+                                {item.preslice}
+                            </span>
+                            <span className="article_others">
+                                {item.artfrom}&nbsp;&nbsp;&nbsp;{Moment(item.timefrom).fromNow()};
+                            </span>r
+
+                        </div>
+                        ))
+                    }
                 </div>
             </div>
         )

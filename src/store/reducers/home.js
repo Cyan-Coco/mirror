@@ -25,6 +25,7 @@ export default function (state = initState, action) {
                 sliders:action.payload.slider.list,
                 list: action.payload.articles.list
             }
+        //获取首页中前端开发的数据
         case types.FRONT_WEB:
           return{
               ...state,
@@ -32,6 +33,7 @@ export default function (state = initState, action) {
               title:action.payload.title,
               list: action.payload.list
           }
+        //获取首页中移动开发的数据
         case types.MOVE_DEV:
           return{
               ...state,
