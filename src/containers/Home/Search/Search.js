@@ -1,36 +1,48 @@
 import React,{Component} from 'react';
 import './Search.less'
+import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 
-let str='';
-export default class Search extends Component{
+class Search extends Component{
     constructor(){
         super();
-        this.state={searchStr:''}
+        this.state={searchInp:''}
     }
     componentDidMount(){
+        this.props.getCourses();
+    }
+    handleGo=()=>{
+        let searchInput = document.getElementsByClassName('search_input')[0].value;
+        localStorage.setItem('c',searchInput);
+        this.props.history.push('/search');
 
     }
-    handleClick(){
-        let searchBtn = document.getElementsByClassName('searchBtn')[0];
-        searchBtn.addEventListener('click',function () {
-            let searchIn = document.getElementsByClassName('search_input')[0].value;
-            console.log(searchIn);
-            //跳转 课程检索页面(带参)
-            localStorage.setItem('homeStr',searchIn);
-        });
+    changeVal=(e)=>{
+        this.setState({searchInp:e.target.value});
     }
-    changeV=(e)=>{
-      this.setState({searchStr:e.target.value});
-    };
     render(){
         return(
             <div className="search-header">
                 <div className="search">
-                    <span className="searchBtn" onClick={this.handleClick}><i className="iconfont">&#xe622;</i>
+                    <span className="searchBtn" onClick={this.handleGo}>
+
+                        <Link
+                            to={
+                                {
+                                    pathname:"/search",
+                                    state:{data:this.state.searchInp}
+                                }
+                            }
+                        >
+                            <i className="iconfont">&#xe622;</i>
+                        </Link>
+
                     </span>
-                    <input className="search_input" type="text" placeholder="  在1000+教库中搜索..." onChange={this.changeV}/>
+                    <input className="search_input" type="text" placeholder="  在1000+教库中搜索..." onChange={this.changeVal}/>
                 </div>
             </div>
         )
     }
 }
+import actions from '../../../store/actions';
+export default connect(state=>state.course, actions)(Search)
