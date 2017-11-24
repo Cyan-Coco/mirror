@@ -2,9 +2,23 @@ import React, {Component}  from 'react';
 import Footer from '../Footer/footer';
 import './tiku2.less';
 import Header from "../../../components/Header/home_header";
+import {fetchLessons} from '../../../common/api/study';
 export default class Tiku2 extends Component {
-
+    constructor(){
+        super();
+        this.state={
+            lessons:[]
+        }
+    }
+    componentDidMount(){
+        fetchLessons().then(res=>{
+            this.setState({
+                lessons:res.studyList[1].list
+            })
+        })
+    }
     render() {
+        console.log(this.state.lessons);
         return (
             <div>
                 <Header headerName="题库"/>
@@ -18,111 +32,17 @@ export default class Tiku2 extends Component {
                         <li>数据库</li>
                     </ul>
                     <ul className="tiku2-list">
-                        <li>
-                            <i className="iconfont icon-pen"></i>
-                            <p>HTML测验</p>
-                            <span className="arrow-right"></span>
-                        </li>
-                        <li>
-                            <i className="iconfont icon-pen"></i>
-                            <p>HTML测验</p>
-                            <span className="arrow-right"></span>
-                        </li>
-                        <li>
-                            <i className="iconfont icon-pen"></i>
-                            <p>HTML测验</p>
-                            <span className="arrow-right"></span>
-                        </li>
-                        <li>
-                            <i className="iconfont icon-pen"></i>
-                            <p>HTML测验</p>
-                            <span className="arrow-right"></span>
-                        </li>
-                        <li>
-                            <i className="iconfont icon-pen"></i>
-                            <p>HTML测验</p>
-                            <span className="arrow-right"></span>
-                        </li>
-                        <li>
-                            <i className="iconfont icon-pen"></i>
-                            <p>HTML测验</p>
-                            <span className="arrow-right"></span>
-                        </li>
-                        <li>
-                            <i className="iconfont icon-pen"></i>
-                            <p>HTML测验</p>
-                            <span className="arrow-right"></span>
-                        </li>
-                        <li>
-                            <i className="iconfont icon-pen"></i>
-                            <p>HTML测验</p>
-                            <span className="arrow-right"></span>
-                        </li>
-                        <li>
-                            <i className="iconfont icon-pen"></i>
-                            <p>HTML测验</p>
-                            <span className="arrow-right"></span>
-                        </li>
-                        <li>
-                            <i className="iconfont icon-pen"></i>
-                            <p>HTML测验</p>
-                            <span className="arrow-right"></span>
-                        </li>
-                        <li>
-                            <i className="iconfont icon-pen"></i>
-                            <p>HTML测验</p>
-                            <span className="arrow-right"></span>
-                        </li>
-                        <li>
-                            <i className="iconfont icon-pen"></i>
-                            <p>HTML测验</p>
-                            <span className="arrow-right"></span>
-                        </li>
-                        <li>
-                            <i className="iconfont icon-pen"></i>
-                            <p>HTML测验</p>
-                            <span className="arrow-right"></span>
-                        </li>
-                        <li>
-                            <i className="iconfont icon-pen"></i>
-                            <p>HTML测验</p>
-                            <span className="arrow-right"></span>
-                        </li>
-                        <li>
-                            <i className="iconfont icon-pen"></i>
-                            <p>HTML测验</p>
-                            <span className="arrow-right"></span>
-                        </li>
-                        <li>
-                            <i className="iconfont icon-pen"></i>
-                            <p>HTML测验</p>
-                            <span className="arrow-right"></span>
-                        </li>
-                        <li>
-                            <i className="iconfont icon-pen"></i>
-                            <p>HTML测验</p>
-                            <span className="arrow-right"></span>
-                        </li>
-                        <li>
-                            <i className="iconfont icon-pen"></i>
-                            <p>HTML测验</p>
-                            <span className="arrow-right"></span>
-                        </li>
-                        <li>
-                            <i className="iconfont icon-pen"></i>
-                            <p>HTML测验</p>
-                            <span className="arrow-right"></span>
-                        </li>
-                        <li>
-                            <i className="iconfont icon-pen"></i>
-                            <p>HTML测验</p>
-                            <span className="arrow-right"></span>
-                        </li>
-                        <li>
-                            <i className="iconfont icon-pen"></i>
-                            <p>HTML测验</p>
-                            <span className="arrow-right"></span>
-                        </li>
+                        {
+                            this.state.lessons.map((item,index)=>(
+                                <li key={index}>
+                                    <i>
+                                        <img src={item.icon}/>
+                                    </i>
+                                    <p>{item.title}</p>
+                                    <span className="arrow-right"></span>
+                                </li>
+                            ))
+                        }
                     </ul>
                 </div>
                 <Footer/>
