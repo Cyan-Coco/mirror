@@ -35,7 +35,7 @@ class Study extends Component {
                                     {
                                         item.list.slice(0,4).map((item,index)=>(
                                             <li key={index}>
-                                                <div className="study-weike-img">
+                                                <div>
                                                     <img src={item.cover} alt=""/>
                                                 </div>
                                                 <h3>{item.title}</h3>
