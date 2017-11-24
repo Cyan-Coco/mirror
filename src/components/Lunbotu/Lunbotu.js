@@ -26,21 +26,20 @@ export default class Lunbotu extends Component{
                 this.setState({index});
             }
         };
-
         return (
             <div className="carousel_wrapper">
             <ReactSwipe  swipeOptions={swipeOptions}>
                 {
-                    this.props.images.map((item,index)=>(
+                    this.props.sliders.map((item,index)=>(
                         <div key={index}>
-                            <img src={item}/>
+                            <img src={item.sliderImg}/>
                         </div>
                     ))
                 }
             </ReactSwipe>
             <div className="dots">
                 {
-                    this.props.images.map((item,index)=>(
+                    this.props.sliders.map((item,index)=>(
                         <span key={index} className={this.state.index ===index?'active':''}>
                         </span>
                     ))

@@ -14,11 +14,11 @@ export function fetchOffice() {
 }
 
 //获取开发者头条
-export function getFrontWeb() {
+export function fetchFrontWeb() {
     return get('/api/webdev')
 }
 
 //获取官方推荐
-export function getMoveDev() {
+export function fetchMoveDev() {
     return get('/api/mobiledev')
 }
