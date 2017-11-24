@@ -1,9 +1,11 @@
 import React, {Component}  from 'react';
+import {connect} from 'react-redux';
+
 import Footer from '../Footer/footer';
 import './weike2.less'
 import Header from "../../../components/Header/home_header";
 import {fetchLessons} from '../../../common/api/study'
-export default class Weike2 extends Component {
+class Weike2 extends Component {
     constructor() {
         super();
         this.state = {
@@ -35,14 +37,14 @@ export default class Weike2 extends Component {
                                 <li key={index}>
                                     <div className="weike2-img">
                                         <img src={item.cover}/>
-                                        {/*<p>{item.title}</p>*/}
                                     </div>
                                     <div className="weike2-title">
                                         <h4>{item.title}</h4>
                                         <span className="price">价格:{item.price.presave}</span>
                                         <span className="canyu">{item.favorites}</span>
                                     </div>
-                                    <span className="arrow-right"></span>
+                                    <span className="arrow-right">
+                                    </span>
                                 </li>
                             ))
                         }
@@ -53,3 +55,6 @@ export default class Weike2 extends Component {
         )
     }
 }
+//mapStateToProps
+import actions from '../../../store/actions'
+export default connect(state => state.study, actions)(Weike2)
