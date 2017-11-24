@@ -45,7 +45,6 @@ let userModel =
     }
 /*******************************************/
 
-
 Router.post('/api/login', function (req, res) {
     let {userName, userPwd} = req.body;
     userPwd = hashHex(userPwd);
@@ -60,6 +59,7 @@ Router.post('/api/login', function (req, res) {
         }
     })
 });
+
 Router.post('/api/signup', function (req, res) {
     let {userName, userPwd, userImg} = req.body,
         editUserModel = userModel;
@@ -87,6 +87,7 @@ Router.post('/api/signup', function (req, res) {
 
     })
 });
+
 Router.get('/api/sign', function (req, res) {
     let {userName} = req.query;
     readData(path).then((data) => {

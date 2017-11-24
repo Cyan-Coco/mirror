@@ -7,8 +7,7 @@ Router.post('/api/recentread', function (req, res) {
 Router.get('/api/course', function (req, res) {
     let {id} = req.query,result;
     if(id){
-        let outIndex=id.split('')[0],
-            innerIndex=id.split('')[1];
+        let [outIndex,innerIndex] = id;
         result= courses.courseList[outIndex].list[innerIndex-1];
         result ?
             res.json(result):
