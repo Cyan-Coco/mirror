@@ -50,9 +50,9 @@ export default class Content extends Component {
                             <span className="article_content">
                                 {
                                     item.cover!==''?
-                                        <span className="article_content" style={{width: '3.8rem'}}>
-                                        <img style={{position:'absolute',top:'1.25rem',right:'.53rem',width:'1.5rem',height:'.8rem'}} src={item.cover}/>
-                                            {item.preslice.length>=50?item.preslice.substring(0,50)+'...':item.preslice}
+                                        <span className="article_content" style={{width: '5.3rem'}}>
+                                        <img className="itemCovor" style={{top:'1.25rem',right:'.53rem',width:'1.5rem',height:'.8rem'}} src={item.cover}/>
+                                            {item.preslice.length>=40?item.preslice.substring(0,40)+'...':item.preslice}
                                         </span>
                                         :
                                         <span className="article_content">
