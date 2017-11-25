@@ -30,7 +30,7 @@ app.use(expressSession({
     secret: 'sevenw3c',
     resave: true,
     saveUninitialized: true,
-    cookie: {secure: true}
+    cookie: {secure: true,maxAge:10*1000}
 }))
 
 /**router middleware*/
