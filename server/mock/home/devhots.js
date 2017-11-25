@@ -15,7 +15,7 @@ module.exports = {
             {
                 id: 1,
                 isHot: false,
-                cover: '',
+                cover: '../../../resource/images/home/devhots/cover_devhots_hot.png',
                 title: '安天携手广州大学共建网络空间高级威胁对抗联合实验室',
                 preslice: '联合实验室将针对网络空间安全领域高级威胁的挑战，综合分析高级威胁对政企网络、智慧城市、关键信息基础建设',
                 artfrom: 'FreeBuf/antiylab',
