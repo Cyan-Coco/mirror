@@ -33,7 +33,7 @@ export default class Content extends Component {
         return (
             <div>
                 <div className="articleType">
-                    <span className="title_content">{this.props.articles.title}{this.props.title}</span>
+                    <span className="title_content">{this.props.articles.articles.title}{this.props.title}</span>
                 </div>
 
                 <div className="content">
