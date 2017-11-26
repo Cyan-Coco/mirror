@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import './index.less'
-import {fetchBook} from '../../../common/api/course'
+import {fetchBook,addCollect} from '../../../common/api/course'
 import Dialog from "../Dialog/index";
 export default class Detail extends Component {
     constructor() {
         super();
-        this.state = {flag: true,book:{}};
+        this.state = {flag: true,book:{},isShow:false,isShowT:false};
     }
     handleClick = () => {
         if (this.state.flag) {
@@ -26,13 +26,29 @@ export default class Detail extends Component {
         this.refs.contentT.style.transitionDuration = '1s';
         this.setState({flag: false});
     };
-    collectBook=()=>{
+    handleDialog=()=>{
+      this.setState({isShow:false,isShowT:false})
+    };
+    handleDownload=()=>{
+        this.setState({isShowT:false,isShow:true})
+    };
+    collectBook=(book)=>{
         //如果没有登录就弹出请先登录，如果登录了就可以收藏了，
-
-        // this.refs.collect.innerHTML='已收藏';
-        // this.refs.collect.style.background='orange';
-
-
+        let id=localStorage.getItem('id');
+        if(id){
+            addCollect(book).then(()=>{
+                // this.refs.collect.innerHTML='已收藏';
+                // this.refs.collect.style.background='orange';
+            })
+        }else{
+            this.setState({isShow:true});
+        }
+    };
+    download=()=>{
+        let id=localStorage.getItem('id');
+        if(!id){
+            this.setState({isShowT:true});
+        }
     };
     componentDidMount(){
         let book = this.props.location.state;// 这么写是因为列表页面link中写了state所以可以这么调用
@@ -45,7 +61,19 @@ export default class Detail extends Component {
         }
     }
     render() {
-
+        let dialog={
+            title:'未登录',
+            content:'该功能需要登录才能操作，清注册或登录账号后操作',
+            handleDialog:this.handleDialog,
+            button:'继续'
+        };
+        let dialogT={
+            title:'友情提醒',
+            content:'建议WIFI情况下进行离线下载。',
+            handleDialog:this.handleDialog,
+            button:'确定继续',
+            handleDownload:this.handleDownload
+        };
         return (
             <div className="detailT">
                 <div className="up-content">
@@ -63,11 +91,15 @@ export default class Detail extends Component {
                                 alt=""/>
                         </div>
                         <p className="course-p">{this.state.book.content}</p>
-                        <a href="" className="course-a read">开始阅读</a>
+                        <a href="javascript:;" className="course-a read">开始阅读</a>
                         <a href="javascript:;" className="course-a"
                            ref="collect"
-                           onClick={()=>this.collectBook(this.state.book)}>收藏</a>
-                        <a href="" className="course-a">下载离线版本</a>
+                           onClick={()=>this.collectBook(
+                               {userId:localStorage.getItem('userId'),favorite:this.state.book.coursetype}
+                           )}>收藏</a>
+                        <a href="javascript:;"
+                           onClick={this.download}
+                           className="course-a">下载离线版本</a>
                     </div>
                 </div>
                 <div className="mainT">
@@ -82,7 +114,8 @@ export default class Detail extends Component {
                         </ul>
                     </div>
                 </div>
-                <Dialog content="请先登录"/>
+                {this.state.isShow?<Dialog dialog={dialog}/>:null}
+                {this.state.isShowT?<Dialog dialog={dialogT}/>:null}
             </div>
 
         )

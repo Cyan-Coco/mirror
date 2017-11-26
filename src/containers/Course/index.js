@@ -25,7 +25,7 @@ class Course extends Component {
     render() {
         return (
             <div className="bg">
-                <Header headerName="教程库" bgColor="#ae4141" fontColor="white"/>
+                <Header headerName="教程库" bgColor="#d13532" fontColor="white"/>
                 <div ref="list" className="mainTt">
                     <div className="search-header">
                         <div className="search">
