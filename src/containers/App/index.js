@@ -7,6 +7,7 @@ import Tab from '../../components/Tab/index'
 const history = createHashHistory();
 /******************************************************/
 import Home from '../Home/index';
+import HomeDetail from '../Home/Detail/Detail';
 import Course from '../Course/index';
 import Study from '../Study/index';
 import Profile from '../Profile/index';
@@ -29,6 +30,8 @@ class App extends Component {
             <ConnectedRouter history={history}>
                 <div className="App">
                     <Route path='/' exact component={Home}/>
+                    <Route path='/homedetail/:title' component={HomeDetail}/>
+                    {/*<Route path='/homedetail' component={HomeDetail}/>*/}
                     <Route path='/course' component={Course}/>
                     <Route exact path='/study' component={Study}/>
                     <Route path='/study/weike2' exact component={Weike2}/>
