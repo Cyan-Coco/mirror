@@ -21,7 +21,7 @@ export default class Tab extends Component{
         })
      };
     render(){
-        let all=['开发头条','官方推荐','前端开发','移动开发','移动开发','移动开发','移动开发','移动开发'];
+        let all=['开发头条','官方推荐','前端开发','移动开发','开源资讯','数据库','论坛讨论','群组分享'];
         return(
             <div className="pic_list">
                 <ul>
