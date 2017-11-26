@@ -21,11 +21,18 @@
       margin-left:.2rem;
 
       .jindutiao{
+        position: relative;
         margin-top:.1rem;
-
         width: 93%;
         height: .1rem;
-       background-color: #eee;
+        background-color: #eee;
+        .jdtcolor{
+          position: absolute;
+          background-color: #039be5;
+          //width: 50%;
+          height: 100%;
+          z-index: 555;
+        }
 
       }
     }
@@ -38,12 +45,14 @@
       padding: .06rem .2rem;
       border-radius: .1rem;
     }
+
   }
   .header {
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #d13532;
+    height: 4rem;
     .myheader {
       color: #fff;
       font-size: .2rem;
@@ -60,6 +69,11 @@
         height:1rem;
 
       }
+      .xuehao{
+        padding: .3rem;
+        color: #fff;
+
+      }
       .loginreg {
         color: #fff;
         font-size: .2rem;
@@ -72,7 +86,11 @@
           text-decoration: none
         }
       }
+     .icon-VIP{
+       color: #eee;
+       padding-top: .2rem;
 
+     }
     }
   }
 
@@ -95,7 +113,7 @@
       }
       span {
         margin-left: .2rem;
-        width: 91%;
+        width: 90%;
         border-bottom: 1px #eee solid;
         display: inline-block;
         height: .8rem;
