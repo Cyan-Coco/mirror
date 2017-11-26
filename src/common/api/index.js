@@ -1,4 +1,4 @@
-const HOST = 'http://192.168.137.1:54999';
+const HOST = 'http://localhost:54999';
 export function get(url) {
   return fetch(HOST + url, {
     method: 'GET',

@@ -99,10 +99,10 @@ class Register extends Component {
                               onClick={this.queryRandomCode}></span>
                     </p>
                     <p className="register-p"><i className="iconfont icon-book"></i>
-                        <input type="text" placeholder="密码" ref={input => this.password = input}
+                        <input type="password" placeholder="密码" ref={input => this.password = input}
                                className="register-input"/></p>
                     <p className="register-p"><i className="iconfont icon-book"></i>
-                        <input type="text" placeholder="确认密码" ref={input => this.truepassword = input}
+                        <input type="password" placeholder="确认密码" ref={input => this.truepassword = input}
                                className="register-input"/></p>
                 </div>
                 <div className="register-btn" onClick={this.reg}>注册</div>

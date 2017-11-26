@@ -16,7 +16,7 @@ class Study extends Component {
     render() {
         return (
             <div className="study-wrap">
-                <Header headerName="学习" bgColor="#fff" fontColor="#000"/>
+                <Header headerName="学习"/>
                 <div className="study-content-wrap">
                     {
                         this.props.sliders.length>0?<Lunbotu sliders={this.props.sliders}/>:''
