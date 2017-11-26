@@ -6,7 +6,11 @@ let devhots = require('./mock/home/devhots'),
     mobiledev = require('./mock/home/mobdev');
 
 Router.get('/api/devhots', function (req, res) {
-    console.log(`刘婉月在 ${new Date()}访问了 /api/devhots接口`);
+    if(req.query){
+        let {offset,limit} = req.query;
+        devhots.articles.list
+    }
+
     res.json(devhots);
 });
 Router.get('/api/office', function (req, res) {
