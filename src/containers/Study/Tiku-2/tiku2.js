@@ -20,7 +20,7 @@ export default class Tiku2 extends Component {
         console.log(this.state.lessons);
         return (
             <div>
-                <Header headerName="题库"/>
+                <Header goBack={true} headerName="题库"/>
                 <div className="tiku2-content">
                     <ul className="tiku2-tab">
                         <li id="headLines">开发头条</li>

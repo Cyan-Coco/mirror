@@ -8,13 +8,26 @@ import './home_header.less';
 export default class Header extends Component{
     constructor(){
         super();
-        this.state={headerName:'请传入Header名称'}
+        this.state={
+            headerName:'请传入Header名称',
+            goBack:false,
+            signUp:false
+        }
+    }
+    handleGoBack(){
+        window.history.back();
     }
     render(){
         return(
             <div className="home_header" style={{background:this.props.bgColor}} >
+                <span className="goBack" onClick={this.handleGoBack}>
+                    {this.props.goBack?<span>&lt;&lt;</span>:''}
+                </span>
                 <span className="header_name" style={{color:this.props.fontColor}}>
                     {typeof(this.props.headerName) !=='string'?this.state.headerName:this.props.headerName}
+                </span>
+                <span className="signUp">
+                    {this.props.signUp?'注册':''}
                 </span>
             </div>
     )

@@ -19,7 +19,7 @@ let readData = (path) => {
             });
         });
     },
-    /***wirte data to json file*/
+    /***write data to json file*/
     writeData = (path, data, callback) => {
         fs.writeFile(path, JSON.stringify(data), callback)
     },
@@ -45,21 +45,24 @@ let userModel =
     }
 /*******************************************/
 
-
 Router.post('/api/login', function (req, res) {
     let {userName, userPwd} = req.body;
+    let userId;
     userPwd = hashHex(userPwd);
     readData(path).then((data) => {
         data = JSON.parse(data);
-        return data.find((item) => item.userName == userName && item.userPwd == userPwd);
+        let findResult = data.find((item) => item.userName == userName && item.userPwd == userPwd);
+        userId = findResult && findResult.userId;
     }).then((accessLogin) => {
         if (!accessLogin) {
             res.json({code: 0, message: '账号密码错误，请重试'})
         } else {
+            req.session.user = {userName, userId};
             res.json({code: 1, message: '登录成功，Enjoy IT'})
         }
     })
 });
+
 Router.post('/api/signup', function (req, res) {
     let {userName, userPwd, userImg} = req.body,
         editUserModel = userModel;
@@ -87,31 +90,32 @@ Router.post('/api/signup', function (req, res) {
 
     })
 });
+
 Router.get('/api/sign', function (req, res) {
     let {userName} = req.query;
     readData(path).then((data) => {
         data = JSON.parse(data);
         return data
     }).then((data) => {
-      return  data.map((item, index) => {
-            if(item.userName==userName){
-                if(item.lastSign==new Date().toDateString()){
+        return data.map((item, index) => {
+            if (item.userName == userName) {
+                if (item.lastSign == new Date().toDateString()) {
                     res.json({code: 0, message: '您今日已签到，请勿重复签到'});
                     return item;
                 }
                 else {
-                    item.lastSign=new Date().toDateString();
-                    item.userExp=item.userExp+10;
-                    res.json({code:1,message:'恭喜你，签到成功'});
+                    item.lastSign = new Date().toDateString();
+                    item.userExp = item.userExp + 10;
+                    res.json({code: 1, message: '恭喜你，签到成功'});
                     return item;
                 }
-            }else {
+            } else {
                 return item
             }
         })
-    }).then((data)=>{
-        writeData(path,data,function (err) {
-            if(err){
+    }).then((data) => {
+        writeData(path, data, function (err) {
+            if (err) {
                 console.log(err);
             }
         })
@@ -121,5 +125,6 @@ Router.post('/api/accout', function (req, res) {
 
 });
 
+Router.get('/')
 
 module.exports = Router;

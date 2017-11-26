@@ -23,7 +23,7 @@ export default class Shizhan2 extends Component {
     render() {
         return (
             <div>
-                <Header headerName="实战" bgColor="#fff" fontColor="#000"/>
+                <Header goBack={true} headerName="实战" bgColor="#fff" fontColor="#000"/>
                 <div className="shizhan2-content">
                     <div className="slider">
                         <img src={this.state.sliders.sliderImg}/>

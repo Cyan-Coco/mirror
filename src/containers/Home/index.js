@@ -13,10 +13,13 @@ class Home extends Component {
         return (
             <div className="home_content">
                 <Header headerName="首页"/>
-                <Tab propsTab={this.props}/>
-                 <div className="tab_replace">
-                     <Main articles={this.props} sliders={this.props.sliders}/>
+                <div className="exTB">
+                    <Tab propsTab={this.props}/>
+                    <div className="tab_replace">
+                        <Main articles={this.props} sliders={this.props.sliders}/>
+                    </div>
                 </div>
+
 
             </div>
         )

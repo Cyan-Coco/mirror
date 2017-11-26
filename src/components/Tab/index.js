@@ -30,4 +30,4 @@ class Tab extends Component {
     )
   }
 }
-export default connect(null, actions)(Tab)
+export default Tab
