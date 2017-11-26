@@ -13,7 +13,7 @@ export default class Main extends Component{
 
                 {this.props.sliders.length>0 && <div><Search/><Lunbotu sliders={this.props.sliders}/></div>}
 
-                <Content articles={this.props.articles}/>
+                <Content articles={this.props}/>
             </div>
         )
     }

@@ -3,7 +3,7 @@ import './index.less'
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom'
 import actions from '../../../store/actions'
- class Dialog extends Component{
+class Dialog extends Component{
     constructor(){
         super();
     }

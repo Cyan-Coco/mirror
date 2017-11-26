@@ -15,7 +15,7 @@ export function fetchCourses(search) {
 }
 //收藏书  大家不要删这个，这个是新增的
 export function addCollect(book) {
-    return post(`${_Url}/api/accout`,book)
+    return post('/profile/api/account',book)
 }
 
 

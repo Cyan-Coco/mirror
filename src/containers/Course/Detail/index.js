@@ -27,25 +27,26 @@ export default class Detail extends Component {
         this.setState({flag: false});
     };
     handleDialog=()=>{
-      this.setState({isShow:false,isShowT:false})
+        this.setState({isShow:false,isShowT:false})
     };
     handleDownload=()=>{
         this.setState({isShowT:false,isShow:true})
     };
     collectBook=(book)=>{
         //如果没有登录就弹出请先登录，如果登录了就可以收藏了，
-        let id=localStorage.getItem('id');
+        let id=localStorage.getItem('userId');
+        console.log(id);
         if(id){
-            addCollect(book).then(()=>{
-                // this.refs.collect.innerHTML='已收藏';
-                // this.refs.collect.style.background='orange';
-            })
+                this.refs.collect.innerHTML='已收藏';
+               this.refs.collect.style.background='orange';
+               //  data=data.json();
+               //  console.log(data);
         }else{
             this.setState({isShow:true});
         }
     };
     download=()=>{
-        let id=localStorage.getItem('id');
+        let id=localStorage.getItem('userId');
         if(!id){
             this.setState({isShowT:true});
         }
@@ -56,7 +57,7 @@ export default class Detail extends Component {
             this.setState({book});
         }else{
             let id = this.props.match.params.coursetype;
-            console.log(id);
+           // console.log(id);
             fetchBook(id).then(book=>this.setState({book}))
         }
     }
