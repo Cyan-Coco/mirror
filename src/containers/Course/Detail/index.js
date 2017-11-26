@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './index.less'
 import {fetchBook} from '../../../common/api/course'
+import Dialog from "../Dialog/index";
 export default class Detail extends Component {
     constructor() {
         super();
@@ -27,8 +28,11 @@ export default class Detail extends Component {
     };
     collectBook=()=>{
         //如果没有登录就弹出请先登录，如果登录了就可以收藏了，
-        this.refs.collect.innerHTML='已收藏';
-        this.refs.collect.style.background='orange';
+
+        // this.refs.collect.innerHTML='已收藏';
+        // this.refs.collect.style.background='orange';
+
+
     };
     componentDidMount(){
         let book = this.props.location.state;// 这么写是因为列表页面link中写了state所以可以这么调用
@@ -78,6 +82,7 @@ export default class Detail extends Component {
                         </ul>
                     </div>
                 </div>
+                <Dialog content="请先登录"/>
             </div>
 
         )
