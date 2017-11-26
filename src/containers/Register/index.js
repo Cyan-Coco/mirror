@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import './index.less';
 import Header from "../../components/Header/home_header";
+import  {fetchSignup}  from '../../common/api/profile';
 
 class Register extends Component {
     constructor() {
@@ -26,20 +27,58 @@ class Register extends Component {
         codeBox.innerHTML = result
 
     }
-   //页面加载完成后,获取到的初始的四位数的验证码
+    //页面加载完成后,获取到的初始的四位数的验证码
     componentDidMount() {
         this.queryRandomCode();
     }
 
-    reg=()=>{
-        let  phone=this.phone.value;
-        let  reg = /^1\d{10}$/;
-        let  code=this.code.value;
-        let  pwd=this.password.value;
-        let  truepwd=this.truepassword.value;
-        if(!reg.test(phone)){
-           alert('手机号错误');
+    reg = () => {
+        let phone = this.phone.value;
+        let reg = /^1\d{10}$/;
+        let code = this.code.value;
+        let codeBox = document.getElementById('codeBox').innerHTML;//四个验证码
+        let pwd = this.password.value;
+        let truepwd = this.truepassword.value;
+        if (phone == '') {
+            alert('手机号不能为空');
+            return;
+        } else {
+            if (!reg.test(phone)) {
+                alert('手机号错误');
+                return;
+            }
         }
+        if (code == '') {
+            alert('验证码不能为空');
+            return;
+        }
+        if (code != codeBox) {
+            alert('验证码错误');
+            return;
+        }
+
+
+        if (pwd != truepwd) {
+            alert('密码错误');
+            return;
+        }
+        if (pwd == '') {
+            alert('密码不能为空');
+            return;
+        }
+        if (truepwd == '') {
+            alert('确认密码不能为空');
+            return;
+        }
+
+        fetchSignup({userName: phone, userPwd: pwd}).then(data => {
+            if (data.code == 0) {
+                alert(data.message);
+            } else {
+                alert(data.message);
+                window.location.href='http://localhost:8080/#/login';
+            }
+        })
 
     }
 
@@ -66,7 +105,7 @@ class Register extends Component {
                         <input type="text" placeholder="确认密码" ref={input => this.truepassword = input}
                                className="register-input"/></p>
                 </div>
-                <div className="register-btn"  onClick={this.reg}>注册</div>
+                <div className="register-btn" onClick={this.reg}>注册</div>
             </div>
         )
     }

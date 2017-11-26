@@ -13,5 +13,5 @@ export function fetchSignin(data) {
 }
 //签到
 export function fetchSign(name) {
-  return get(`${_Url}/api/sign?username=${name||''}`)
+  return get(`${_Url}/api/sign?userName=${name||''}`)
 }
