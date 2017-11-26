@@ -19,3 +19,10 @@ export const FETCH_LESSONS='FETCH_LESSONS'
 export const SIGN_UP = 'SIGN_UP'
 //登录
 export const SIGN_IN = 'SIGN_IN'
+
+
+//获取前端教程数据
+export const FRONT_WEB='FRONT_WEB'
+//获取移动教程数据
+export const MOVE_DEV='MOVE_DEV'
+

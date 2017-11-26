@@ -12,3 +12,13 @@ export function fetchDevhots() {
 export function fetchOffice() {
   return get('/api/office')
 }
+
+//获取开发者头条
+export function fetchFrontWeb() {
+    return get('/api/webdev')
+}
+
+//获取官方推荐
+export function fetchMoveDev() {
+    return get('/api/mobiledev')
+}

@@ -2,19 +2,18 @@ import React,{Component} from 'react';
 import Search from '../Search/Search';
 import Lunbotu from '../../../components/Lunbotu/Lunbotu';
 import Content from '../Content/Content';
-let images=[
-    require('./2.png'),
-    require('./1.png'),
-    require('./2.png')
-];
 export default class Main extends Component{
 
+    componentDidMount(){
+
+    }
     render(){
         return(
             <div>
-                <Search/>
-                <Lunbotu images={images}/>
-                <Content/>
+
+                {this.props.sliders.length>0 && <div><Search/><Lunbotu sliders={this.props.sliders}/></div>}
+
+                <Content articles={this.props.articles}/>
             </div>
         )
     }

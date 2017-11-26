@@ -4,20 +4,13 @@ import {createHashHistory} from 'history';
 import {HashRouter as Router, Route, Link} from 'react-router-dom';
 import './index.less';
 import Nav from './Nav/nav';
-import Footer from './Footer/footer';
 import Header from "../../components/Header/home_header";
 import Lunbotu from '../../components/Lunbotu/Lunbotu';
 
-let images = [
-    require('../.././components/Lunbotu/1.jpg'),
-    require('../.././components/Lunbotu/1.jpg'),
-    require('../.././components/Lunbotu/1.jpg')
-];
+
 class Study extends Component {
     componentDidMount() {
         this.props.getLessons();
-        console.log(this.props.sliders);
-        console.log(this.props.lessons);
     }
 
     render() {
@@ -25,7 +18,9 @@ class Study extends Component {
             <div className="study-wrap">
                 <Header headerName="学习" bgColor="#fff" fontColor="#000"/>
                 <div className="study-content-wrap">
-                    <Lunbotu images={images}/>
+                    {
+                        this.props.sliders.length>0?<Lunbotu sliders={this.props.sliders}/>:''
+                    }
                     <Nav/>
                     {
                         this.props.lessons.map((item, index) => (
@@ -40,7 +35,7 @@ class Study extends Component {
                                     {
                                         item.list.slice(0,4).map((item,index)=>(
                                             <li key={index}>
-                                                <div className="study-weike-img">
+                                                <div>
                                                     <img src={item.cover} alt=""/>
                                                 </div>
                                                 <h3>{item.title}</h3>
@@ -53,7 +48,6 @@ class Study extends Component {
                     }
 
                 </div>
-                <Footer/>
             </div>
         )
     }

@@ -7,17 +7,19 @@ import './index.less';
 
 class Home extends Component {
   componentDidMount(){
-    this.props.getOffice()
+     this.props.getDevhots();
   }
     render() {
         return (
-
             <div className="home_content">
                 <Header headerName="首页"/>
-                <Tab/>
-                <div className="tab_replace">
-                    <Main/>
+                <div className="exTB">
+                    <Tab propsTab={this.props}/>
+                    <div className="tab_replace">
+                        <Main articles={this.props} sliders={this.props.sliders}/>
+                    </div>
                 </div>
+
 
             </div>
         )

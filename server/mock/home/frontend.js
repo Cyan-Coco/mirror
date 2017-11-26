@@ -1,5 +1,6 @@
 module.exports = {
     hasMore: false,
+    title:'前端开发',
     list: [
         {
             id: 1,
@@ -66,4 +67,4 @@ module.exports = {
             coursetype:'jsarray'
         },
     ]
-}
+};
