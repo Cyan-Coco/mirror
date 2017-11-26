@@ -26,7 +26,7 @@ export default class Detail extends Component {
     render() {
         return (
             <div>
-                <Header headerName={this.state.title.length>10?this.state.title.substring(0,10)+'...':this.state.title} bgColor="#ae4141" fontColor="white"/>
+                <Header goBack={true} headerName={this.state.title.length>10?this.state.title.substring(0,10)+'...':this.state.title} bgColor="#ae4141" fontColor="white"/>
                 <div className="detail_main">
                     <iframe src={this.queryStr(window.location.href)} frameBorder="0" style={{height:'9.5rem',width:'100%'}}></iframe>
                     <img className="loadingImage" src="../../../../resource/images/home/devhots/loading.gif" alt=""/>
