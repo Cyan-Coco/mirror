@@ -25,6 +25,57 @@ export default {
             })
         }
     },
+<<<<<<< HEAD
+=======
+    //登录
+    login(data){
+        return dispatch => {
+            fetchSignin(data).then(payload => {
+                dispatch({
+                    type: types.SIGN_IN,
+                    payload
+                })
+                let {code} = payload
+                if (code == 1) {
+                    dispatch(push('/home'))
+                }
+            })
+        }
+    },
+    //注册
+    register(data){
+        return dispatch => {
+            fetchSignup(data).then(payload => {
+                dispatch({
+                    type: types.SIGN_UP,
+                    payload
+                })
+                let {code} = payload
+                if (code == 1) {
+                    dispatch(push('/login'))
+                }
+            })
+        }
+    },
+
+
+
+/*    //获取教程库列表中某一项的信息
+    getCourse(){
+        return (dispatch) => {
+
+      }
+    },
+
+>>>>>>> 50c80f8d5ddd5a1d343967244637167777df8010
+    //获取教程库中所有数据
+    getCourses(search){
+        return dispatch => {
+            fetchCourses(search).then(payload => {
+
+    },*/
+
+>>>>>>> 15867a347893e80cb9deee34dbdaa72f7ef937d2
     //获取前端开发数据
     getFrontWeb(){
         return(dispatch)=>{
