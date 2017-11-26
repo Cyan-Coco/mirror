@@ -26,7 +26,7 @@ class Profile extends Component {
                // let  jdtgshi=jdt*100+'%';
                 let jdt=((data.user.userExp-lv*100)/100)*100+'%';//这是进度条的长度
 
-              document.getElementById('jindutiao').style.width=jdt;
+                document.getElementById('jindutiao').style.width=jdt;
                 localStorage.setItem('jdt',jdt);
                 localStorage.setItem('userlv',lv);
                 qian.innerHTML='已签到';
